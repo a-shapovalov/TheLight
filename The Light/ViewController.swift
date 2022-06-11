@@ -20,7 +20,8 @@ class ViewController: UIViewController {
     }
     
     fileprivate func updateUI() {
-        view.backgroundColor = isLightOn ? .red : .green
+        view.backgroundColor = isLightOn ? .white : .black
+        
     }
     
     @IBAction func buttonAction(_ sender: UIButton) {
