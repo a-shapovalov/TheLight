@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -13,23 +14,51 @@ class ViewController: UIViewController {
         return true
     }
     
-    var isLightOn = false
+    var colorNumber = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
     }
     
+    
     fileprivate func updateUI() {
-        view.backgroundColor = isLightOn ? .white : .black
-        
+        if colorNumber == 1 {
+            view.backgroundColor = .green
+        }
+        if colorNumber == 2 {
+            view.backgroundColor = .yellow
+        }
+        if colorNumber == 3 {
+            view.backgroundColor = .red
+        }
     }
     
-    @IBAction func buttonAction(_ sender: UIButton) {
-        isLightOn.toggle()
-        updateUI()
         
+        static func toggleFlashLight() {
+            guard let device = AVCaptureDevice.default(for: AVMediaType.video),
+                  device.hasTorch else { return }
+            do {
+                try device.lockForConfiguration()
+                try device.setTorchModeOn(level: 1.0)
+                device.torchMode = device.isTorchActive ? .off : .on
+                device.unlockForConfiguration()
+            } catch {
+                assert(false, "error: device flash light, \(error)")
+            }
+        }
+
+    @IBAction func flashON(_ sender: Any) {
+        ViewController.toggleFlashLight()
     }
-
-
+    
+    
+    @IBAction func buttonAction(_ sender: UIButton) {
+        colorNumber += 1
+        if colorNumber == 4 {
+            colorNumber = 1
+        }
+        updateUI()
+    }
 }
 

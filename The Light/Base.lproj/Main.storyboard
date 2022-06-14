@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,20 +24,40 @@
                                     <action selector="buttonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8VW-IQ-HuS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kys-oH-bng">
+                                <rect key="frame" x="120" y="727" width="174" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="174" id="49s-xt-xMX"/>
+                                    <constraint firstAttribute="height" constant="65" id="Mel-nQ-9Am"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="FlashLight"/>
+                                <connections>
+                                    <action selector="flashON:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KOM-oi-ubu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemFillColor"/>
                         <constraints>
-                            <constraint firstItem="Ngy-VE-DtM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4bo-HN-rh8"/>
-                            <constraint firstItem="Ngy-VE-DtM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bvf-G2-F2o"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ngy-VE-DtM" secondAttribute="trailing" id="v1h-NW-Vvn"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ngy-VE-DtM" secondAttribute="bottom" id="vyI-j3-BTI"/>
+                            <constraint firstItem="Ngy-VE-DtM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7zV-Z3-n1v"/>
+                            <constraint firstItem="Ngy-VE-DtM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="904-iK-rbJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kys-oH-bng" secondAttribute="bottom" constant="70" id="AEV-FJ-X4s"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ngy-VE-DtM" secondAttribute="bottom" id="NKk-Qk-YnJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ngy-VE-DtM" secondAttribute="trailing" id="Sa7-eb-8QA"/>
+                            <constraint firstItem="kys-oH-bng" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="Xz2-Pf-LOf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kys-oH-bng" secondAttribute="trailing" constant="120" id="khT-Kd-mzk"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="84"/>
+            <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
